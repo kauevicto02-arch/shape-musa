@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1" />
+<title>Shape de Musa — Descubrí tu Método Personalizado</title>
+<meta name="description" content="Descubrí el Método Shape de Musa creado por Aline Pamplona. Un test de 2 minutos para conocer el plan ideal para tu cuerpo." />
+
+<!-- ============================================================
+     TIPOGRAFÍAS
+     Fraunces (display, editorial/elegante) + Plus Jakarta Sans (UI/cuerpo)
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Fondo de "aura" orgánica animada — elemento de firma visual de la marca -->
+<div class="bg-aura" aria-hidden="true">
+  <span class="blob blob--a"></span>
+  <span class="blob blob--b"></span>
+</div>
+
+<!-- Barra de progreso fija -->
+<header class="progress-bar" id="progressBar" aria-hidden="true">
+  <div class="progress-bar__track">
+    <div class="progress-bar__fill" id="progressFill"></div>
+  </div>
+</header>
+
+<!-- Botón volver -->
+<button class="btn-back" id="btnBack" aria-label="Volver" type="button">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<main id="app" class="app" role="main"></main>
+
+<!-- ============================================================
+     SCRIPTS
+     content.js  -> TODO el contenido editable (textos, preguntas, etc)
+     engine.js   -> Motor de renderizado y lógica del quiz
+     main.js     -> Inicialización
+     ============================================================ -->
+<script src="js/content.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
