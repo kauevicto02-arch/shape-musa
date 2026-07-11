@@ -649,3 +649,92 @@ html, body{
   #diagnosisCard{position:absolute;left:0;top:0;width:100%;box-shadow:none;border:1px solid #ddd;}
   .diagnosis-save{display:none!important;}
 }
+/* Corrige travamento vertical nas imagens */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Imagem grande do diagnóstico */
+.diagnostic-image,
+.diagnostic-image img {
+  touch-action: pan-y;
+}
+
+.diagnostic-image img {
+  pointer-events: none;
+}
+
+/* Carrossel de resultados */
+.results-carousel,
+.results-track,
+.testimonials-carousel,
+.carousel-track {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y !important;
+}
+
+.results-carousel img,
+.results-track img,
+.testimonials-carousel img,
+.carousel-track img {
+  pointer-events: none;
+}
+/* ===========================
+   CORREÇÃO DO SCROLL MOBILE
+=========================== */
+
+img{
+    -webkit-user-drag:none;
+    -webkit-user-select:none;
+    user-select:none;
+}
+
+.results-carousel,
+.testimonials-slider,
+.testimonials-track,
+.carousel,
+.slider{
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+.results-carousel img,
+.testimonials-slider img,
+.testimonials-track img,
+.carousel img,
+.slider img{
+    pointer-events:none;
+}
+/* Corrige scroll do carrossel no iPhone */
+
+.carousel__track{
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+}
+
+.carousel__track img{
+    pointer-events:none;
+    -webkit-user-drag:none;
+    user-select:none;
+}
+/* CORREÇÃO DO SCROLL NO CARROSSEL MOBILE */
+.carousel__track{
+  overflow-x:auto;
+  overflow-y:visible;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-x:contain;
+  touch-action:pan-y;
+}
+
+.carousel__track img{
+  pointer-events:none;
+  -webkit-user-drag:none;
+  user-select:none;
+  -webkit-user-select:none;
+}

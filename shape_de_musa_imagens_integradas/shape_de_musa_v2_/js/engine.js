@@ -638,28 +638,47 @@ QUESTION_IDS.forEach(qid => {
    No celular o swipe nativo já funciona; isso ajuda no PC/Live Server. */
 function enableDragScroll(track){
   if(!track) return;
+
   let isDown = false;
   let startX = 0;
+  let startY = 0;
   let scrollLeft = 0;
+  let draggingHorizontal = false;
 
   track.addEventListener("pointerdown", (e) => {
     isDown = true;
-    track.classList.add("is-dragging");
+    draggingHorizontal = false;
+
     startX = e.clientX;
+    startY = e.clientY;
     scrollLeft = track.scrollLeft;
-    track.setPointerCapture?.(e.pointerId);
+
+    track.classList.add("is-dragging");
   });
 
   track.addEventListener("pointermove", (e) => {
     if(!isDown) return;
-    e.preventDefault();
-    const walk = (e.clientX - startX) * 1.2;
-    track.scrollLeft = scrollLeft - walk;
+
+    const diffX = e.clientX - startX;
+    const diffY = e.clientY - startY;
+
+    /*
+      Só considera arraste horizontal quando
+      o movimento para o lado for maior que o vertical
+    */
+    if(Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 6){
+      draggingHorizontal = true;
+      e.preventDefault();
+
+      const walk = diffX * 1.2;
+      track.scrollLeft = scrollLeft - walk;
+    }
   });
 
   ["pointerup", "pointercancel", "pointerleave"].forEach(evt => {
     track.addEventListener(evt, () => {
       isDown = false;
+      draggingHorizontal = false;
       track.classList.remove("is-dragging");
     });
   });
