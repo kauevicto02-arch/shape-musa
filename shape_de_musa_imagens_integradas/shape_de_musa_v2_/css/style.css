@@ -738,3 +738,11 @@ img{
   user-select:none;
   -webkit-user-select:none;
 }
+.ph-image--result,
+.ph-image--result img{
+  touch-action: pan-y !important;
+  pointer-events: none !important;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
